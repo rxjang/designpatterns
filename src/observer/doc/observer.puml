@@ -1,0 +1,32 @@
+@startuml
+
+interface Subject {
+    registerOberver()
+    removeOberver()
+    notifyOberver()
+}
+
+interface Observer {
+    update()
+}
+
+class ConcreteSubjcet {
+    registerOberver()
+    removeOberver()
+    notifyOberver()
+
+    getSate()
+    setState()
+}
+
+class ConcreteOberver {
+    update()
+}
+
+Subject -R-> Observer
+Subject <|.. ConcreteSubjcet
+Observer <|.. ConcreteOberver
+ConcreteSubjcet <-R- ConcreteOberver
+
+
+@enduml

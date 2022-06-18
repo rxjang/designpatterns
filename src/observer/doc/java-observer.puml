@@ -1,0 +1,41 @@
+@startuml
+
+class Observable {
+    addObserver()
+    deleteObserver()
+    notifyOberver()
+    setChanged()
+}
+
+interface Observer {
+    update()
+}
+
+class WeatherData {
+    getTemperature()
+    getHumidity()
+    getPressure()
+}
+
+class GeneralDisplay {
+    update()
+    display()
+}
+
+class StatisticsDisplay {
+    update()
+    display()
+}
+
+class ForecastDisplay {
+    update()
+    display()
+}
+
+Observable -R-> Observer
+Observable <|-- WeatherData
+Observer <|.. GeneralDisplay
+WeatherData <-R- GeneralDisplay
+Observer <|.. StatisticsDisplay
+Observer <|.. ForecastDisplay
+@enduml

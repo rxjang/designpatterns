@@ -1,0 +1,61 @@
+@startuml
+
+interface Subject {
+    registerOberver()
+    removeOberver()
+    notifyObervers()
+}
+
+interface Observer {
+    update()
+}
+
+interface DisplayElement {
+    display()
+}
+
+class WeatherData {
+    registerOberver()
+    removeOberver()
+    notifyOberver()
+
+    getTemperature()
+    getHumidity()
+    getPressure()
+    measurementsChanged()
+}
+
+class CurrentConditions {
+    update()
+    display()
+}
+
+class StatisticsDisplay {
+    update()
+    display()
+}
+
+class ThirdPartyDispaly {
+    update()
+    display()
+}
+
+class ForecastDisplay {
+    update()
+    display()
+}
+
+Subject -R-> Observer
+Subject <|.. WeatherData
+Observer <|.. CurrentConditions
+DisplayElement <|.. CurrentConditions
+WeatherData <-R- CurrentConditions
+Observer <|.. StatisticsDisplay
+DisplayElement <|.. StatisticsDisplay
+Observer <|.. ThirdPartyDispaly
+DisplayElement <|.. ThirdPartyDispaly
+Observer <|.. ForecastDisplay
+DisplayElement <|.. ForecastDisplay
+
+
+@enduml
