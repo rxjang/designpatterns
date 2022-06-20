@@ -1,0 +1,42 @@
+@startuml
+
+abstract class Component {
+    methodA()
+    methodB()
+}
+
+class ConcreteComponent {
+    methodA()
+    methodB()
+}
+
+abstract class Decorator {
+    methodA()
+    methodB()
+}
+
+class ConcreteDecoratorA {
+    ComponentWrapperObj
+    methodA()
+    methodB()
+    newBehivior()
+}
+
+class ConcreteDecoratorB {
+    ComponentWrapperObj
+    Object newState
+    methodA()
+    methodB()
+}
+
+
+Component <|-- ConcreteComponent
+Component <|-- Decorator
+Component <-- Decorator
+
+
+Decorator <|-- ConcreteDecoratorA
+Decorator <|-- ConcreteDecoratorB
+
+
+@enduml

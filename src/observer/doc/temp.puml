@@ -1,0 +1,17 @@
+@startuml
+
+entity room {
+
+}
+
+entity chat {
+
+}
+
+entity user {
+
+}
+
+
+
+@enduml

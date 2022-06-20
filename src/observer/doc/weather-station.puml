@@ -18,7 +18,6 @@ class WeatherData {
     registerOberver()
     removeOberver()
     notifyOberver()
-
     getTemperature()
     getHumidity()
     getPressure()
